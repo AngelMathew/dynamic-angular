@@ -1,0 +1,43 @@
+<div
+  class="container flex flex-wrap mx-auto my-20 relative justify-between"
+>
+  <div class="">
+    <div class="relative z-10 lg:w-full lg:max-w-lg xl:max-w-xl">
+      <div
+        class="container mx-auto px-4 py-4 sm:px-6 md:py-4 lg:py-4 lg:pl-6 lg:pr-0"
+      >
+        <div class="sm:text-center lg:text-left">
+          <h1 class="font-times text-4xl text-primary-700 lg:text-5xl">
+            <span class="block font-bold leading-tight xl:inline">
+              {{ heading }}
+            </span>
+          </h1>
+          <p
+            class="mt-4 text-base leading-normal text-primary-700 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0"
+          >
+            {{ summary }}
+          </p>
+
+          <div *ngIf="cta" class="pb-5 pt-10">
+            <app-cta
+              [url]="cta.url"
+              [text]="cta.text"
+              [hasPrimaryCta]="cta.type"
+              contentType="mainHero"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="heroImage.image"
+
+  >
+
+    <app-featured-image
+      [image]="heroImage.image.fields.file.url"
+      [altImage]="heroImageAlt"
+    ></app-featured-image>
+  </div>
+</div>

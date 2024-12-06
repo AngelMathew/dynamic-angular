@@ -1,0 +1,6 @@
+<ng-container  *ngIf="componentData$ | async as componentData">
+
+  <app-dynamic-renderer [components]="componentData"></app-dynamic-renderer>
+
+</ng-container>
+
